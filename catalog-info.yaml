@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: d1r40tlya-nodejs-gitops
+  description: This is GitOps manifest for d1r40tlya-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: d1r40tlya-nodejs
+    backstage.io/kubernetes-id: d1r40tlya-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: d1r40tlya-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:d1r40tlya-nodejs
